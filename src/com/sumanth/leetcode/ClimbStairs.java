@@ -16,6 +16,7 @@ public class ClimbStairs {
         count[0] = 1;
         count[1] = 2;
         
+        
         for (int i = 3; i <= n; i++) {
             count[i] = count[i-1] + count[i-2];
         }

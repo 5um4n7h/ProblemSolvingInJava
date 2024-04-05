@@ -1,4 +1,4 @@
-/fining the square root without using any library
+//fining the square root without using any library
 
 
 package com.sumanth.leetcode;
