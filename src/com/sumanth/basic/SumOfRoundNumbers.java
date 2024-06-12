@@ -1,40 +1,45 @@
 //https://codeforces.com/contest/1352/problem/A
 
+
 package com.sumanth.basic;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class SumOfRoundNumbers {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
+
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Number of inputs : ");
-        var scanner = new Scanner(System.in);
-        
-        var n = scanner.nextInt();
-        var numbers = new int[n];
-        for (int i = 0; i < n; i++) {
+        int t = scanner.nextInt(); // number of test cases
+
+        while (t-- > 0) {
             System.out.println("Enter the number : ");
-            numbers[i] = scanner.nextInt();
-        }
-        scanner.close();
-        var resultMap = new HashMap<Integer, List<Integer>>();
-        var list = new ArrayList<Integer>();
-        
-        for (Integer num : numbers) {
-            var l = num.toString().length() - 1;
-            list = new ArrayList<>();
-            while (l >= 0) {
-                if (num.toString().charAt(l) != '0') {
-                    int multiplier = (int) Math.pow(10, l);
-                    int finalNumber = Integer.parseInt(String.valueOf(num.toString().charAt(num.toString().length() - l - 1))) * multiplier;
-                    list.add(finalNumber);
+            int n = scanner.nextInt(); // the number to represent
+
+            List<Integer> roundNumbers = new ArrayList<>();
+            int placeValue = 1; // to track place value (1, 10, 100, 1000, ...)
+
+            while (n > 0) {
+                int digit = n % 10;
+                if (digit > 0) {
+                    roundNumbers.add(digit * placeValue);
                 }
-                l--;
+                n /= 10;
+                placeValue *= 10;
             }
-            resultMap.put(list.size(), list);
+
+            // Output result for this test case
+            System.out.print(roundNumbers.size());
+            for (int num : roundNumbers) {
+                System.out.print(" " + num);
+            }
+            System.out.println();
         }
-        
-        for (var item : resultMap.entrySet()) {
-            System.out.println(item.getKey() + " : " + item.getValue());
-        }
+
+        scanner.close();
     }
 }
+
