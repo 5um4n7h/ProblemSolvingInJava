@@ -18,6 +18,7 @@ public class ArrayOperations {
             arr[i] = arr[i + 1];
         }
         arr[9] = 0;
+        //arr[9]= null; not possible
         System.out.println(Arrays.toString(arr));
 
     }
