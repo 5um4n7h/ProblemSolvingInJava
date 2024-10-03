@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class TwoSum {
     //time complexity O(n^2)
     public static int[] twoSum(int[] nums, int target) {
-        int arr[] = new int[2];
+        int[] arr = new int[2];
         for(var i=0;i<nums.length;i++)
         {
             for(var j=0;j<nums.length;j++){
