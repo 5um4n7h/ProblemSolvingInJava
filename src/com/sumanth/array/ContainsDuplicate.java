@@ -2,6 +2,8 @@ package com.sumanth.array;
 
 import java.util.HashSet;
 
+//https://leetcode.com/problems/contains-duplicate/submissions/1410764758/
+
 public class ContainsDuplicate {
 
     public static void main(String[] args) {
